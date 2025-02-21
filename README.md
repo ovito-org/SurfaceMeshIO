@@ -1,7 +1,7 @@
 # SurfaceMeshIO
 OVITO extension to read/write [surface meshes](https://www.ovito.org/manual/python/introduction/data_model.html#surface-meshes) with all attached properties from/to a [compressed numpy file](https://numpy.org/doc/2.1/reference/generated/numpy.savez_compressed.html#numpy.savez_compressed). 
 
-The configuration of the visual element is not exported.
+The configuration of the [visual element](https://docs.ovito.org/reference/pipelines/visual_elements/surface_mesh.html#visual-elements-surface-mesh) is not exported.
 
 ## Example
 The surface mesh created in ``examples/example_01.ovito`` can be exported using the [export file dialog](https://www.ovito.org/manual/python/introduction/data_model.html#surface-meshes) selecting the "Surface mesh file writer" format.
@@ -27,15 +27,16 @@ export_file(data, "examples/example_01.npz", format=SurfaceMeshFileWriter, key=d
 ```
 
 ## Installation
+- From the OVITO Pro using the [extensions GUI](https://www.ovito.org/docs/current/advanced_topics/python_extensions.html#topics-python-extensions)
 - OVITO Pro [integrated Python interpreter](https://docs.ovito.org/python/introduction/installation.html#ovito-pro-integrated-interpreter):
   ```
-  ovitos -m pip install --user git+https://github.com/nnn911/SurfaceMeshIO.git
+  ovitos -m pip install --user git+https://github.com/ovito-org/SurfaceMeshIO
   ``` 
   The `--user` option is recommended and [installs the package in the user's site directory](https://pip.pypa.io/en/stable/user_guide/#user-installs).
 
 - Other Python interpreters or Conda environments:
   ```
-  pip install git+https://github.com/nnn911/SurfaceMeshIO.git
+  pip install git+https://github.com/ovito-org/SurfaceMeshIO
   ```
 
 ## Technical information / dependencies
