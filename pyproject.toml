@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "SurfaceMeshIO"
-version = "2025.1"
+version = "2025.2"
 description = "A file writer & writer for OVITO surface meshes with their auxilliary information"
 keywords = ["ovito", "ovito-extension"]
 authors = [{name = "Daniel Utt", email = "utt@ovito.org"}]

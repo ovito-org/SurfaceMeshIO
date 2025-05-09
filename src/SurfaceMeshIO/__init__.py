@@ -1,7 +1,7 @@
-from ovito.io import FileWriterInterface, FileReaderInterface
-from ovito.data import DataObject, SurfaceMesh, DataCollection
-from ovito.pipeline import Pipeline
 import numpy as np
+from ovito.data import DataCollection, DataObject, SurfaceMesh
+from ovito.io import FileReaderInterface, FileWriterInterface
+from ovito.pipeline import Pipeline
 
 
 class SurfaceMeshFileWriter(FileWriterInterface):
@@ -101,3 +101,6 @@ class SurfaceMeshFileReader(FileReaderInterface):
                 mesh.faces_.create_property(key.split("/")[1], data=mesh_data[key])
             elif key.startswith("regions"):
                 mesh.regions_.create_property(key.split("/")[1], data=mesh_data[key])
+
+        if not mesh.connect_opposite_halfedges():
+            raise RuntimeWarning("Mesh is not closed!")
