@@ -1,10 +1,11 @@
-import numpy as np
-import pytest
-from ovito.io import import_file, export_file
-from ovito import Scene
-import numpy as np
 import tempfile as tf
 from pathlib import Path
+
+import numpy as np
+import pytest
+from ovito import Scene
+from ovito.io import export_file, import_file
+
 from SurfaceMeshIO import SurfaceMeshFileWriter
 
 
@@ -45,7 +46,7 @@ def test_export(state_data, npz_ref_file, npz_tmp_file):
 
     assert data.keys() == ref.keys()
     for key in data.keys():
-        if isinstance(data[key].dtype, np.number):
+        if issubclass(data[key].dtype.type, np.number):
             assert np.allclose(data[key], ref[key])
         else:
             assert np.all(data[key] == ref[key])
