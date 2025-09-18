@@ -32,6 +32,10 @@ jobs:
       if: matrix.os == 'ubuntu-latest'
       run: |
         sudo apt install -y libegl1 libopengl0
+    - name: Install Visual C++ Redistributable
+      if: matrix.os == 'windows-latest'
+      run: |
+        choco install vcredist140 -y
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v6
       with:
