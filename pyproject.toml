@@ -9,7 +9,7 @@ description = "A file writer & writer for OVITO surface meshes with their auxill
 keywords = ["ovito", "ovito-extension"]
 authors = [{name = "Daniel Utt", email = "utt@ovito.org"}]
 maintainers = [{name = "Daniel Utt", email = "utt@ovito.org"}]
-license = {text = "[[License]]"}
+license = "MIT"
 readme = "README.md"
 requires-python = ">=3.9"
 dependencies = [
